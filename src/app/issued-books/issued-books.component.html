@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>User Id</th>
+                <th>Book Id</th>
+                <th>Issue Date</th>
+                <th>Return Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let issues of issue'>
+                <td>{{issues.id}}</td>
+                <td>{{issues.uid}}</td>
+                <td>{{issues.bookId}}</td>
+                <td>{{issues.issueDate}}</td>
+                <td>{{issues.returnDate}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
+
+

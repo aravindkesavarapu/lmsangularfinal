@@ -1,0 +1,31 @@
+<div class="alert alert-success" *ngIf='error'>{{error}}</div>
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+<div class="container mt-4">
+<table class="table table-hover table-bordered">
+  <thead class="thead-info">
+      <tr>
+          <th>SL.No</th>
+          <th>Id</th>
+          <th>UserId</th>
+          <th>BookId</th>
+          <th>BookName</th>
+          <th>Return</th>
+          
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor = 'let book of borrowed; index as i'>
+          <td>{{i + 1}}</td>
+          <td>{{book.id}}</td>
+          <td>{{book.uid}}</td>
+          <td>{{book.bookId}}</td>
+          <td>{{book.bookName}}</td>
+          <td>
+            <button class="button btn--outline-dark float-right" (click)='bookReturn(book)'>
+              Return
+          </button>
+          </td>
+      </tr>
+  </tbody>
+</table>
+</div>

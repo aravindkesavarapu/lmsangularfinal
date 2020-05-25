@@ -1,0 +1,52 @@
+
+<div class="alert alert-success" *ngIf='message'>{{message}}</div>
+<div class="card col-md-4 offset-md-4 mt-4">
+    <form   #editBookForm ='ngForm' (ngSubmit)='editBook(editBookForm)' >
+        <h3 style="text-align: center;">Update Book!!</h3>
+
+        <div class="form-group row" style="font-size: medium;">
+          <label for="bookId" class="col-sm-3 col-form-label">BookId:</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="bookId" readonly
+            #bookId='ngModel' [(ngModel)]='bookToBeUpdated.bookId' name="bookId">
+          </div>
+        </div> 
+           <div class="form-group row">
+            <label for="bookName" class="col-sm-3 col-form-label">BookName</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="bookName"
+              #bookName='ngModel' [(ngModel)]='bookToBeUpdated.bookName' name="bookName">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="authorName" class="col-sm-3 col-form-label">Author</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="authorName" name="authorName"
+              #authorName='ngModel' [(ngModel)]='bookToBeUpdated.authorName'>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="bookCategory" class="col-sm-3 col-form-label">Category</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="bookCategory" name="bookCategory"
+              #bookCategory='ngModel' [(ngModel)]='bookToBeUpdated.bookCategory'>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="copies" class="col-sm-3 col-form-label">Copies</label>
+            <div class="col-sm-8">
+              <input type="number" class="form-control" id="copies" 
+              #copies='ngModel' [(ngModel)]='bookToBeUpdated.copies'name="copies">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="publisherName" class="col-sm-3 col-form-label">Publisher</label>
+            <div class="col-sm-8">
+                <input type="text" class="form-control" id="publisherName" 
+                #publisherName='ngModel' [(ngModel)]='bookToBeUpdated.publisherName' name="publisherName">
+            </div>
+          </div>
+          
+        <button type="submit" class="btn btn-info btn-dark btn-block mb-3">Edit Book</button>
+      </form>
+</div>  

@@ -1,0 +1,50 @@
+<!-- navbar color -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="home">
+    <img src="https://www.pngitem.com/pimgs/m/19-194483_stack-of-books-icon-transparent-book-icon-png.png" width="40" height="40" alt="">
+  </a>
+
+  <a class="navbar-brand" routerLink="/">Library</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        
+        <li class="nav-item active" *ngIf='isAdmin()'>
+          <a class="nav-link" routerLink="/">Admin<span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item active" *ngIf='isUser()'>
+            <a class="nav-link" routerLink="/">User<span class="sr-only">(current)</span></a>
+            </li>
+
+          <li class="nav-item" *ngIf= 'isAdmin()'>
+            <a routerLink="/showIssuedBooks" class="nav-link">Show Issued Books</a>
+          </li>
+          
+          <li class="nav-item" *ngIf= 'isAdmin()'>
+            <a routerLink="/showRequests" class="nav-link">Show Request Books</a>
+          </li>
+          <li class="nav-item" *ngIf= 'isUser()'>
+            <a routerLink="/returnBook" class="nav-link">Borrowed Books</a>
+          </li>
+          
+       
+      </ul>  
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" *ngIf= '!(isAdmin() || isUser())'>
+          <a routerLink="/login" class="nav-link">Login</a>
+        </li>
+  
+        <li class="nav-item">
+          <a routerLink="/register" class="nav-link">Register</a>
+        </li>
+        <li class="nav-item" *ngIf= 'isAdmin() || isUser()'>
+              <a class="nav-link" style="cursor: pointer;" (click)='logout()'>Logout</a>
+          </li>
+      </ul>
+    </div>
+  </nav>

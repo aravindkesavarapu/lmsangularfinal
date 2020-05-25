@@ -1,0 +1,85 @@
+<!-- 
+<div class="col-md-4 offset-md-4 mt-3 mb-3">
+    <input type="search" name="search" [(ngModel)]='search' class="form-control" placeholder="Search Here For A Book">
+</div>
+<div class="container mt-4">
+<table class="table table-hover table-bordered ">
+    <thead class="thead-dark">
+        <tr>
+            <th>SL.No</th>
+            <th>BookId</th>
+            <th>BookName</th>
+            <th>AuthorName</th>
+            <th>BookCategory</th>
+            <th>Copies</th>
+            <th>PublisherName</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let books of book | filter: search ; index as i'>
+            <td>{{i + 1}}</td>
+            <td>{{books.bookId}}</td>
+            <td>{{books.bookName}}</td>
+            <td>{{books.authorName}}</td>
+            <td>{{books.bookCategory}}</td>
+            <td>{{books.copies}}</td>
+            <td>{{books.publisherName}}</td>
+           <td>
+            <button class="button btn--outline-primary" (click)='selectBook(books)'>
+                Update
+            </button>
+           </td>
+           <td>
+            <button class="button btn--outline-dark float-right" (click)='deleteBook(books.bookId)'>
+                Delete
+            </button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+ -->
+
+ <div class="col-md-4 offset-md-4 mt-3 mb-3">
+    <input type="search" name="search" [(ngModel)]='search' class="form-control" placeholder="Search Here For A Book">
+</div>
+<div class="container mt-4">
+<table class="table table-hover table-bordered">
+    <thead class="thead-info">
+        <tr>
+            <th>SL.No</th>
+            <th>BookId</th>
+            <th>BookName</th>
+            <th>AuthorName</th>
+            <th>BookCategory</th>
+            <th>Copies</th>
+            <th>PublisherName</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let books of book | filter: search ; index as i'>
+            <td>{{i + 1}}</td>
+            <td>{{books.bookId}}</td>
+            <td>{{books.bookName}}</td>
+            <td>{{books.authorName}}</td>
+            <td>{{books.bookCategory}}</td>
+            <td>{{books.copies}}</td>
+            <td>{{books.publisherName}}</td>
+           <td>
+            <button class="button btn--outline-primary" (click)='selectBook(books)'>
+                Update
+            </button>
+           </td>
+           <td>
+            <button class="button btn--outline-dark float-right" (click)='deleteBook(books.bookId)'>
+                Delete
+            </button>
+        </td>
+        </tr>
+    </tbody>
+</table>
+</div>
