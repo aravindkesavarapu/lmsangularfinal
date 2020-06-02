@@ -1,83 +1,79 @@
 <div class="alert alert alert-danger" *ngIf='error'>{{error}}</div>
 <div class="alert alert-success" *ngIf='message'>{{message}}</div>
-<div class="register">
-  <div class="container">
-    <div class="col-lg-7 offset-md-3 mt-5">
+<div class="container">
 
-      <h1 class="horizontal">Welcome !!!</h1>
+  <div class="col-xl-7 col-md-4 offset-md-2 mt-5">
 
-      <div class="inner-form">
-        <form #registerForm='ngForm' (ngSubmit)='registerUser(registerForm)'>
+    <div class="card o-hidden border-0 shadow-lg my-5">
 
-          <div class="panel-group">
+      <div class="card-body">
 
-            <div class="row">
+        <div class="col-lg-10">
+          <div class="p-5">
+            <div class="text-center">
+              <h2 class="horizontal text-center">Create an Account!!!</h2>
+            </div>
+            <div class="inner-form mt-4">
+              <form class="user" #registerForm='ngForm' (ngSubmit)='registerUser(registerForm)'>
 
-              <div class="col-lg-12">
-                <label for="firstName">First Name</label>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name"
-                    #firstName='ngModel' ngModel required pattern="[a-zA-Z\s]*">
+                  <input type="firstName" class="form-control" id="firstName" name="firstname" placeholder="First Name"
+                    #firstName='ngModel' ngModel required pattern="[a-zA-Z\s]*" placeholder="First Name">
                 </div>
-              </div>
-              <div *ngIf="firstName.touched && firstName.invalid">
-                <p class="alert alert-danger" *ngIf="firstName.errors.required">FirstName is required</p>
-                <p class="alert alert-danger" *ngIf="firstName.errors.pattern">Accepts only Alphabets</p>
-              </div>
+                <div  *ngIf="firstName.touched && firstName.invalid">
+                  <p class="alert alert-danger" *ngIf="firstName.errors.required">FirstName is required</p>
+                  <p class="alert alert-danger" *ngIf="firstName.errors.pattern">Accepts only Alphabets</p>
+                </div>
 
-              <div class="col-lg-12">
-
-                <label for="lastName">Last Name</label>
                 <div class="form-group">
                   <input type="lastName" class="form-control" id="lastName" name="lastName" placeholder="Last Name"
                     #lastName='ngModel' ngModel required pattern="[a-zA-Z]*">
                 </div>
-              </div>
-              <div *ngIf="lastName.touched && lastName.invalid">
-                <p class="alert alert-danger" *ngIf="lastName.errors.required">LastName is required</p>
-                <p class="alert alert-danger" *ngIf="lastName.errors.pattern">Accepts only Alphabets</p>
-              </div>
+                <div *ngIf="lastName.touched && lastName.invalid">
+                  <p class="alert alert-danger" *ngIf="lastName.errors.required">LastName is required</p>
+                  <p class="alert alert-danger" *ngIf="lastName.errors.pattern">Accepts only Alphabets</p>
+                </div>
 
-              <div class="col-lg-12">
-                <label for="email">Email:</label>
+
                 <div class="form-group">
                   <input type="email" class="form-control" id="email" name="email" placeholder="Email" #email='ngModel'
                     ngModel required minlength="10"
                     pattern="^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(gmail)\.com$">
                 </div>
-              </div>
-              <div *ngIf="email.touched && email.invalid">
-                <p class="alert alert-danger" *ngIf="email.errors.required">Email is required</p>
-                <p class="alert alert-danger" *ngIf="email.errors.pattern">Enter proper email</p>
-              </div>
-              <div class="col-lg-12">
-                <label>Password </label>
-                <div class="form-group">
-                  <input type="password" class="form-control" id="password" name="password" placeholder="Password"
-                    #password='ngModel' ngModel required minlength="6">
+                <div *ngIf="email.touched && email.invalid">
+                  <p class="alert alert-danger" *ngIf="email.errors.required">Email is required</p>
+                  <p class="alert alert-danger" *ngIf="email.errors.pattern">Enter proper email</p>
                 </div>
+
+                <div>
+                  <!-- <label for="mobileNo">Mobile Number</label> -->
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile Number"
+                      #mobileNo='ngModel' ngModel required mobile minlength="10" pattern="[7-9]{1}[0-9]{9}">
+                  </div>
+                
+                <div *ngIf="mobileNo.touched && mobileNo.invalid">
+                  <p class="alert alert-danger" *ngIf="mobileNo.errors.required">Mobile Number is required</p>
+                  <p class="alert alert-danger" *ngIf="mobileNo.errors.pattern">Mobile Number Should be 10 Digits,
+                    number starts with (7,8,9)</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input type="password" class="form-control mt-3"id="password" name="password" #password='ngModel' placeholder="Password"
+                ngModel required minlength="6"
+                  placeholder="Password">
               </div>
               <div *ngIf="password.touched && password.invalid">
                 <p class="alert alert-danger" *ngIf="password.errors.required">Password is required</p>
                 <p class="alert alert-danger" *ngIf="password.errors.minlength">Accepts minimum 6 characters</p>
               </div>
 
-              <div class="col-lg-12">
-                <label for="mobileNo">Mobile Number</label>
+                  <div >
                 <div class="form-group">
-                  <input type="text" class="form-control" id="mobileNo" name="mobileNo" placeholder="Mobile Number"
-                    #mobileNo='ngModel' ngModel required mobile minlength="10" pattern="[7-9]{1}[0-9]{9}">
-                </div>
-              </div>
-              <div *ngIf="mobileNo.touched && mobileNo.invalid">
-                <p class="alert alert-danger" *ngIf="mobileNo.errors.required">Mobile Number is required</p>
-                <p class="alert alert-danger" *ngIf="mobileNo.errors.pattern">Mobile Number Should be 10 Digits,
-                  number starts with (7,8,9)</p>
-              </div>
-              <div class="col-lg-12">
-                <div class="form-group">
-                  <label for="role">Role:</label>
-                  <select name="role" id="role" #role='ngModel' ngModel class="form-control" required>
+                  <!-- <label for="role">Role:</label> -->
+                  <select name="role" id="role" #role='ngModel' ngModel class="form-control" required placeholder="Role">
+                    <!-- <option selected>Choose Role...</option> -->
                     <option value="admin">Admin</option>
                     <option value="student">Student</option>
                   </select>
@@ -86,19 +82,28 @@
               <div *ngIf="role.touched && role.invalid">
                 <p class="alert alert-danger" *ngIf="role.errors.required">Role is required</p>
               </div>
+              <!-- <label for="cars">Choose a car:</label>
+              <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="opel">Opel</option>
+                <option value="audi">Audi</option>
+              </select> -->
 
-
-              <div class="col-lg-12">
-                <button type="submit" class="btn btn-default" [disabled]='registerForm.invalid'>
-                  <span>SIGN UP</span>
+                
+                <button type="submit" class="btn btn-primary btn-user btn-block" [disabled]='registerForm.invalid'>
+                  Register Account
                 </button>
+
+              </form>
+              <hr>
+              <div class="text-center">
+                <a class="small" routerLink="/login">Already have an account? Login!</a>
               </div>
-
             </div>
-
           </div>
-        </form>
-      </div> <!-- inner-form -->
+        </div>
+
+      </div>
+
     </div>
-  </div>
-</div>

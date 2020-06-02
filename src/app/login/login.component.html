@@ -1,138 +1,73 @@
-<div class="login">
-  <div class="container">
-    <div class="col-lg-7 offset-md-3 mt-5">
+<div class="container">
 
-      <h1 class="horizontal">Welcome Back!!</h1>
+  <!-- Outer Row -->
+  <div>
 
-      <div class="inner-form">
-        <form #loginForm='ngForm' (ngSubmit)='loginUser(loginForm)'>
+    <div class="col-xl-7 col-md-4 offset-md-2 mt-5">
 
-          <!-- <ul class="nav nav-tabs">
-                   <li class="active"><a href="#tab1" data-toggle="tab">LOGIN</a></li>
-                   <li><a href="#tab2" data-toggle="tab">SIGN UP</a></li>
-               </ul> -->
-
-          <!-- Tab panes -->
-          <!-- <div class="tab-content"> 16,101 -->
-          <!-- <div class="tab-pane active in fade" id="tab1"> -->
-          <div class="panel-group">
-
-            <!-- <form role="form">20,50 -->
-            <div class="row">
-
-              <div class="col-lg-12">
-                <label for="email">Email:</label>
-                <div class="form-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <span>
-                        <i class="far fa-envelope"></i>
-                      </span>
-                    </div>
+      <div class="card o-hidden border-0 shadow-lg">
+        <div class="card-body">
+          <!-- Nested Row within Card Body -->
+          <div class="row">
+            <div class="col-lg-10">
+              <div class="p-5">
+                <div class="text-center">
+                  <h4 class="horizontal">Welcome Back!!!</h4>
+                </div>
+                <form class="user mt-5" #loginForm='ngForm' (ngSubmit)='loginUser(loginForm)'>
+                  <div class="form-group mt-4">
                     <input type="email" class="form-control" id="email" name="email" #email='ngModel' ngModel required
-                      placeholder="Email"   minlength="10">
-
+                      placeholder="Email" minlength="10" placeholder="Enter Email Address...">
+                    <!-- aria-describedby="emailHelp" -->
+                  </div>
+                  <div *ngIf="email.touched && email.invalid">
+                    <p class="alert alert-danger" *ngIf="email.errors.required">Email is required</p>
+                    <p class="alert alert-danger" *ngIf="email.errors.minlength"> Accepts minimum 10 characters</p>
                   </div>
 
-                </div>
-              </div>
-              <div *ngIf="email.touched && email.invalid">
-                <p class="alert alert-danger" *ngIf="email.errors.required">Email is required</p>
-                <p class="alert alert-danger" *ngIf="email.errors.minlength"> Accepts minimum 10 characters</p>
-              </div>
-
-
-              <div class="col-lg-12">
-                <label>Password</label>
-                <div class="form-group">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">
-                      <span>
-                        <i class="fas fa-lock"></i>
-                      </span>
-                    </div>
-                    <input type="password" class="form-control" id="password" name="password" #password='ngModel' placeholder="Password"
-                      ngModel required minlength="6">
-                  </div>
-                </div>
-              </div>
-              <div *ngIf="password.touched && password.invalid">
-                <p class="alert alert-danger" *ngIf="password.errors.required">Password is required</p>
-                <p class="alert alert-danger" *ngIf="password.errors.minlength">Accepts minimum 6 characters</p>
-
-              </div>
-
-
-              <div class="col-lg-12">
-                <button type="submit" class="btn btn-default" class="btn btn-dark float" [disabled]='loginForm.invalid'>
-                  <span>LOGIN</span>
-                </button>
-              </div>
-              <br>
-              <br>
-              <div class="col-lg-12">
-                <a routerLink='/register'>New User..Please Register!</a>
-              </div>
-
-
-            </div>
-            
-            <!-- </form> -->
-
-          </div>
-        </form>
-        </div>
-        <!-- </div> -->
-        <div class="tab-pane fade" id="tab2">
-          <div class="panel-group">
-
-            <form role="form">
-              <div class="row">
-
-                <div class="col-lg-12">
-                  <label>Name</label>
                   <div class="form-group">
-                    <input type="text" name="name" id="ad_soyad" class="form-control" placeholder="">
+                    <input type="password" class="form-control mt-3" id="password" name="password" #password='ngModel'
+                      placeholder="Password" ngModel required minlength="6" placeholder="Password">
                   </div>
-                </div>
+                  <div *ngIf="password.touched && password.invalid">
+                    <p class="alert alert-danger" *ngIf="password.errors.required">Password is required</p>
+                    <p class="alert alert-danger" *ngIf="password.errors.minlength">Accepts minimum 6 characters</p>
 
-                <div class="col-lg-12">
-                  <label>Email</label>
-                  <div class="form-group">
-                    <i class="far fa-envelope">
-                      <input type="email" name="email" id="email" class="form-control" placeholder="">
-                    </i>
                   </div>
-                </div>
 
-                <div class="col-lg-12">
-                  <label>Password</label>
-                  <div class="form-group">
-                    <input type="password" name="password" id="password" class="form-control" placeholder="">
-                  </div>
-                </div>
-
-                <div class="col-lg-12">
-                  <label>Password Again</label>
-                  <div class="form-group">
-                    <input type="password" name="password2" id="email" class="form-control" placeholder="">
-                  </div>
-                </div>
-
-                <div class="col-lg-12">
-                  <button type="submit" class="btn btn-default">
-                    <span>SIGN UP</span>
+                  <!-- <div class="form-group">
+                      <div class="custom-control custom-checkbox small">
+                        <input type="checkbox" class="custom-control-input" id="customCheck">
+                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                      </div>
+                    </div> -->
+                  <button type="submit" class="btn btn-primary btn-user btn-block" [disabled]='loginForm.invalid'>
+                    Login
                   </button>
+                  <hr>
+
+                </form>
+                <!-- <hr> -->
+                <!-- <div class="text-center">
+                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                  </div> -->
+                <div class="text-center">
+                  <a class="small" routerLink="/register">Create an Account!</a>
                 </div>
-
               </div>
-            </form>
-
+            </div>
           </div>
         </div>
-        <!-- </div>  tab content div -->
-      </div> <!-- inner-form -->
+      
+      
+      
+      
+      
+      
+      </div>
 
     </div>
-  <!-- </div> container 2,130 -->
+
+  </div>
+
 </div>

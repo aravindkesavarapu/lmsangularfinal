@@ -13,6 +13,7 @@ export class AuthGuard implements CanActivate {
         const expectedRoles = route.data.roles;
         const loginInfo = JSON.parse(localStorage.getItem('user'))
         let role;
+        // let userName;
         for (let index in expectedRoles) {
             if (expectedRoles[index] === loginInfo.user.role) {
                 role = expectedRoles[index];

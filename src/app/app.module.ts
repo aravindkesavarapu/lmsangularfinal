@@ -30,6 +30,7 @@ import { FilterPipe } from './filter.pipe';
 import { FilterAuthorPipe } from './filter-author.pipe';
 import { SearchComponent } from './search/search.component';
 import { DeatailsComponent } from './deatails/deatails.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { DeatailsComponent } from './deatails/deatails.component';
     FilterAuthorPipe,
     SearchComponent,
     DeatailsComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

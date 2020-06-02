@@ -1,73 +1,45 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
 
-.login{
-   font-family: 'Josefin Sans', sans-serif;
-   background: #2c3346; 
-   padding:60px 0px;
+body {
+  overflow-x: hidden;
 }
 
-h1{
-    font-weight:600;
-    font-family: 'Josefin Sans', sans-serif;
-    text-transform:capitalize;
-    text-align:center;
-    color:#FFF;
-    margin:40px 0px;
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
 }
 
-.inner-form{
-    background:#FFF;
-    padding:80px;
-    border-radius:10px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4);
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
 }
 
-label{
-    font-weight:400;
-    font-size:15px;
+#sidebar-wrapper .list-group {
+  width: 15rem;
 }
 
-.form-control {
-    background-color: #f5f5f5;
-    box-shadow: none;
-    color: #565656;
-    font-size:14px;
-    padding:30px 10px;
-    margin-bottom:30px;
+#page-content-wrapper {
+  min-width: 100vw;
 }
 
-.btn{ 
-    background: #36d1dc;
-    background: -webkit-linear-gradient(to right, #36d1dc, #5b86e5);
-    background: linear-gradient(to right, #36d1dc, #5b86e5); 
-    color: #FFF;
-    border-radius: 6px;
-    padding: 20px 40px;
-    margin:0 auto;
-    display:table;
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
 }
 
-.forgot{
-    text-align:center;
-    margin-top:30px;
-    font-size:15px;
-    text-decoration: underline;
-}
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
 
-.nav-tabs{
-    border: none;
-    margin: 0 auto;
-    display: table;
-}
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
 
-.nav-tabs>li.active>a, 
-.nav-tabs>li.active>a:hover,
-.nav-tabs>li.active>a:focus{
-    border: none;
-    font-size:16px;
-}
-
-.nav>li>a{
-    font-size: 16px;
-    color: #3ec2de;
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
 }

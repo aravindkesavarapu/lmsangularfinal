@@ -23,6 +23,7 @@ import { RequestBooksComponent } from './request-books/request-books.component';
 import { AuthGuard } from './auth.guard';
 import { SearchComponent } from './search/search.component';
 import { DeatailsComponent } from './deatails/deatails.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -58,7 +59,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 
 
-  {path: 'details', component: DeatailsComponent}
+  {path: 'details', component: DeatailsComponent},
+  {path: 'sideBar', component: SidebarComponent}
 
 ];
 

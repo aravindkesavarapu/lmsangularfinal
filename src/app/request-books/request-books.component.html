@@ -1,37 +1,41 @@
+<div class="main_content">
+  <div id="content-wrapper" class="d-flex flex-column mt-5">
+    <div class="container-fluid">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-primary">Issued Books</h6>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>SL.No</th>
+                  <th>BookId</th>
+                  <th>BookName</th>
+                  <th>AuthorName</th>
+                  <th>BookCategory</th>
+                  <th>Copies</th>
+                  <th>PublisherName</th>
+                  <th>Request</th>
 
-<div class="col-md-4 offset-md-4 mt-3 mb-3">
-  <input type="search" name="search" [(ngModel)]='search' class="form-control" placeholder="Search Here For A Book">
-</div>
-<div class="container mt-4">
-<table class="table table-hover table-bordered">
-  <thead class="thead-dark">
-      <tr>
-          <th>SL.No</th>
-          <th>BookId</th>
-          <th>BookName</th>
-          <th>AuthorName</th>
-          <th>BookCategory</th>
-          <th>Copies</th>
-          <th>PublisherName</th>
-          <th>Request</th>
-          
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor = 'let books of book | filter: search ; index as i'>
-          <td>{{i + 1}}</td>
-          <td>{{books.bookId}}</td>
-          <td>{{books.bookName}}</td>
-          <td>{{books.authorName}}</td>
-          <td>{{books.bookCategory}}</td>
-          <td>{{books.copies}}</td>
-          <td>{{books.publisherName}}</td>
-          <td>
-            <button class="button btn--outline-dark float-right" (click)='userRequest(books.bookId)'>
-              Request
-          </button>
-          </td>
-      </tr>
-  </tbody>
-</table>
-</div>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let books of book | filter: search ; index as i'>
+                  <td>{{i + 1}}</td>
+                  <td>{{books.bookId}}</td>
+                  <td>{{books.bookName}}</td>
+                  <td>{{books.authorName}}</td>
+                  <td>{{books.bookCategory}}</td>
+                  <td>{{books.copies}}</td>
+                  <td>{{books.publisherName}}</td>
+                  <td>
+                    <button class="button btn--outline-dark float-right" (click)='userRequest(books.bookId)'>
+                      Request
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>

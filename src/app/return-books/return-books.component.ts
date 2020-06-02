@@ -14,10 +14,10 @@ export class ReturnBooksComponent implements OnInit {
   borrowed;
   error;
   constructor(private bookService: BookService,
-    private router: Router) { 
+    private router: Router) {
       this.getBooks();
     }
-  
+
   ngOnInit(): void {
   }
 
@@ -25,17 +25,17 @@ export class ReturnBooksComponent implements OnInit {
     let userDetails = JSON.parse(localStorage.getItem('user'));
     this.bookService.getBorrowedData({id: userDetails.user.id}).subscribe(response =>{
       console.log(response);
-        alert("Books Borrowed are below");
-      this.borrowed = response.borrowed; 
-    },error => {
+        // alert("Books Borrowed are below");
+      this.borrowed = response.borrowed;
+    }, error => {
       console.log(error);
     });
   }
- 
+
 
   bookReturn(book){
-    this.bookService.returnData({ bookId:  book.bookId, uid: book.uid}).subscribe(response =>{
-      if(response.error){
+    this.bookService.returnData({ bookId:  book.bookId, uid: book.uid}).subscribe(response => {
+      if (response.error){
         this.error = 'Book is not Returned';
         setTimeout(() =>{
           this.error = null;

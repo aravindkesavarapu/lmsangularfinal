@@ -1,5 +1,8 @@
 <!-- navbar color -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- <div class="navigation"> -->
+  <!-- <div class="main_content"></div> -->
+  <!-- <div class="restrict"> -->
+<nav class="navbar navbar-expand-lg navbar-custom ">
   <a class="navbar-brand" href="home">
     <img src="https://www.pngitem.com/pimgs/m/19-194483_stack-of-books-icon-transparent-book-icon-png.png" width="40" height="40" alt="">
   </a>
@@ -10,8 +13,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <div class="collapse  navbar-collapse" id="navbarNav">
+      <!-- <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         
         <li class="nav-item active" *ngIf='isAdmin()'>
           <a class="nav-link" routerLink="/">Admin<span class="sr-only">(current)</span></a>
@@ -33,18 +36,20 @@
           </li>
           
        
-      </ul>  
+      </ul>   -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item" *ngIf= '!(isAdmin() || isUser())'>
           <a routerLink="/login" class="nav-link">Login</a>
         </li>
   
-        <li class="nav-item">
+        <li class="nav-item" *ngIf= '!(isAdmin() || isUser())'>
           <a routerLink="/register" class="nav-link">Register</a>
         </li>
-        <li class="nav-item" *ngIf= 'isAdmin() || isUser()'>
-              <a class="nav-link" style="cursor: pointer;" (click)='logout()'>Logout</a>
+        <li class="nav-item logout" *ngIf= 'isAdmin() || isUser()'>
+              <button class="nav-link btn btn-outline-secondary" routerLink="home" style="cursor: pointer; color: white;" (click)='logout()'>Logout</button>
           </li>
       </ul>
-    </div>
+    </div> 
   </nav>
+<!-- </div> -->
+<!-- </div> -->

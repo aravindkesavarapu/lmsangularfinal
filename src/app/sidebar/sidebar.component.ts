@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class HeaderComponent implements OnInit {
-  [x: string]: any;
+export class SidebarComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
   isAdmin() {
     const user = JSON.parse(localStorage.getItem('user'));
     if (user && user.user.role === 'admin') {
@@ -29,8 +27,5 @@ export class HeaderComponent implements OnInit {
       return false;
     }
   }
-  logout() {
-    localStorage.removeItem('user');
-    this.router.navigateByUrl('/login');
-  }
 }
+
